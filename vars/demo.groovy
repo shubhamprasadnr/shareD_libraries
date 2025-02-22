@@ -3,7 +3,7 @@ def call() {
   echo "hello shubham" 
 }
 
-def test() {
+def test(name) {
   sh "date"
-  echo "hello shubham_Prasad" 
+  echo "{$name}" 
 }
