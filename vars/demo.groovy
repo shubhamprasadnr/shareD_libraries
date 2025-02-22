@@ -1,4 +1,4 @@
 def call() {
-  sh "dat"
+  sh "date"
   echo "hello shubham" 
 }
