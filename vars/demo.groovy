@@ -8,5 +8,6 @@ def test(name) {
   echo "{$name}" 
 }
 
-def code()
-sh "git branch: 'main', url: 'https://github.com/OT-MICROSERVICES/attendance-api.git'"
+def code() {
+sh "git branch: 'main', url: 'https://github.com/OT-MICROSERVICES/attendance-api.git"
+}
