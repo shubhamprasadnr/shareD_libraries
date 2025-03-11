@@ -8,7 +8,5 @@ def test(name) {
   echo "{$name}" 
 }
 
-def prod() {
-  sh "date"
-  echo "rahul" 
-}
+def code()
+sh "git branch: 'main', url: 'https://github.com/OT-MICROSERVICES/attendance-api.git'"
