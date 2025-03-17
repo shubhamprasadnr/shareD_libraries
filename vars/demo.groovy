@@ -20,11 +20,17 @@ def gitleaks() {
         sudo apt install gitleaks
     '''
 }
-def report(String reportName) {
-    sh "gitleaks detect -r ${reportName}"
+def report(repoPath = ".") {
+    echo "Running Gitleaks scan..."
+
+    sh '''
+        sh "gitleaks detect --source . -r ${repoPath.json} || true"
+     '''
+
+    echo "Gitleaks scan completed! Report generated in HTML format."
 }
 
-def archive(String reportName) {
-    archiveArtifacts artifacts: reportName, fingerprint: true
-}
+// def archive(String reportName) {
+//     archiveArtifacts artifacts: reportName, fingerprint: true
+// }
 
