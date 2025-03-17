@@ -1,23 +1,18 @@
 def call(name) {
-   echo name "${name}"
+   echo "${name}"
 }
 
-// def checkout(String branch, String repoUrl, String credentialsId) {
-//     git branch: branch, url: repoUrl, credentialsId: credentialsId
-// }
+def gitCheckout(String branch, String repoUrl, String credentialsId = '') {
+    script {
+        echo "Checking out branch: ${branch} from repository: ${repoUrl}"
 
-
-
-// def checkout(String repoUrl, String branch = 'main', String credentialsId = '') {
-//     script {
-//         echo "Checking out code from ${repoUrl} on branch ${branch}"
-//         checkout([
-//             $class: 'GitSCM',
-//             branches: [[name: branch]],
-//             userRemoteConfigs: [[url: repoUrl, credentialsId: credentialsId]]
-//         ])
-//     }
-// }
+        checkout([
+            $class: 'GitSCM',
+            branches: [[name: branch]],
+            userRemoteConfigs: [[url: repoUrl, credentialsId: credentialsId]]
+        ])
+    }
+}
 
 def gitleaks() {
     sh '''
