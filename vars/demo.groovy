@@ -6,18 +6,18 @@ def call(name) {
 //     git branch: branch, url: repoUrl, credentialsId: credentialsId
 // }
 
-#!/usr/bin/env groovy
 
-def checkout(String repoUrl, String branch = 'main', String credentialsId = '') {
-    script {
-        echo "Checking out code from ${repoUrl} on branch ${branch}"
-        checkout([
-            $class: 'GitSCM',
-            branches: [[name: branch]],
-            userRemoteConfigs: [[url: repoUrl, credentialsId: credentialsId]]
-        ])
-    }
-}
+
+// def checkout(String repoUrl, String branch = 'main', String credentialsId = '') {
+//     script {
+//         echo "Checking out code from ${repoUrl} on branch ${branch}"
+//         checkout([
+//             $class: 'GitSCM',
+//             branches: [[name: branch]],
+//             userRemoteConfigs: [[url: repoUrl, credentialsId: credentialsId]]
+//         ])
+//     }
+// }
 
 def gitleaks() {
     sh '''
