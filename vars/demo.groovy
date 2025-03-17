@@ -20,14 +20,14 @@ def gitleaks() {
         sudo apt install gitleaks
     '''
 }
-def report(String reportfile) {
-    echo "Running Gitleaks scan..."
 
-    sh '''
-        sh "gitleaks detect --source . -r ${reportfile} || true"
-         echo "Gitleaks report saved as ${reportfile}
-     '''
+
+   def report(String reportFile) {
+    sh "gitleaks detect --source . --report-format=json -r ${reportFile} || true"
+    echo "Gitleaks report saved as ${reportFile}"
 }
+
+
 
 // def archive(String reportName) {
 //     archiveArtifacts artifacts: reportName, fingerprint: true
