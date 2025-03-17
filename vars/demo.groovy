@@ -1,5 +1,5 @@
-def call() {
-    cleanWs()
+def call(name) {
+   echo name "${name}"
 }
 
 // def checkout(String branch, String repoUrl, String credentialsId) {
