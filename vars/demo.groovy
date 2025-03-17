@@ -2,7 +2,7 @@ def call() {
     cleanWs()
 }
 
-def call(String branch, String repoUrl, String credentialsId) {
+def code_checkout(String branch, String repoUrl, String credentialsId) {
     git branch: branch, url: repoUrl, credentialsId: credentialsId
 }
 
