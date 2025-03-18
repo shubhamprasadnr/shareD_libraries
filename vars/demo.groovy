@@ -48,7 +48,7 @@ def owasp(){
 
 def owaspscan() {
    sh '''
-   /usr/local/bin/dependency-check/bin/dependency-check.sh --scan . --format HTML --out dependency-report.html
+   dependency-check.sh --scan . --format HTML --out dependency-report.html
 
 '''
 
