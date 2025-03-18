@@ -2,7 +2,7 @@ def call(name) {
    echo "${name}"
 }
 def cleanWorkspace() {
-   sh ' cleanWs()' // Alternative to cleanWs if the cleanWs plugin isn't available
+   sh " cleanWs() "
 }
 def gitCheckout(String branch, String repoUrl ) {
     script {
