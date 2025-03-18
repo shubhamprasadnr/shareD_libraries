@@ -4,7 +4,7 @@ def call(name) {
 def cleanWorkspace() {
    sh ' cleanWs()' // Alternative to cleanWs if the cleanWs plugin isn't available
 }
-def gitCheckout(String branch, String repoUrl, String credentialsId = '') {
+def gitCheckout(String branch, String repoUrl, ) {
     script {
         echo "Checking out branch: ${branch} from repository: ${repoUrl}"
 
