@@ -1,10 +1,8 @@
 def call(name) {
    echo "${name}"
 }
-def workspace() {
-   sh '''
-      cleanWs
-      '''
+def cleanWorkspace() {
+   sh 'rm -rf *' // Alternative to cleanWs if the cleanWs plugin isn't available
 }
 def gitCheckout(String branch, String repoUrl, String credentialsId = '') {
     script {
