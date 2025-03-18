@@ -38,12 +38,13 @@ def owasp(){
    wget https://github.com/jeremylong/DependencyCheck/releases/download/v12.1.0/dependency-check-12.1.0-release.zip
    sudo apt install unzip
    unzip dependency-check-12.1.0-release.zip
+   sudo mv dependency-check /usr/local/bin/dependency-check
    '''
 }
 
 def owaspscan() {
    sh '''
- dependency-check.sh --project "YourProject" --scan . --format HTML --out dependency-check-report.html || true
+   /usr/local/bin/dependency-check/bin/dependency-check.sh --scan . --format HTML --out dependency-report.html
 
 '''
 
