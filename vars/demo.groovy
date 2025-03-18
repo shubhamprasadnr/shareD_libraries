@@ -3,7 +3,7 @@ def call(name) {
 }
 def workspace() {
    sh '''
-      cleanWs()
+      cleanWs
       '''
 }
 def gitCheckout(String branch, String repoUrl, String credentialsId = '') {
