@@ -33,3 +33,18 @@ def gitleaks() {
 //     archiveArtifacts artifacts: reportName, fingerprint: true
 // }
 
+def owasp(){
+   sh '''
+   wget https://github.com/jeremylong/DependencyCheck/releases/download/v12.1.0/dependency-check-12.1.0-release.zip
+   apt install unzip
+   unzip dependency-check-12.1.0-release.zip
+   '''
+}
+
+def owaspscan() {
+   sh '''
+ dependency-check.sh --project "YourProject" --scan . --format HTML --out dependency-check-report.html || true
+
+'''
+
+}
