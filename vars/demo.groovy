@@ -48,6 +48,6 @@ def owasp(){
 
 def owaspscan() {
    sh '''
-   ./dependency-check/bin/dependency-check.sh --scan . --format HTML --out dependency-report.html
+   JAVA_OPTS="-Dnvd.api.key=39ba0629-d86f-4aa2-98de-43726b700c23" ./dependency-check/bin/dependency-check.sh --scan . --format HTML --out dependency-report.html
    '''
 }
