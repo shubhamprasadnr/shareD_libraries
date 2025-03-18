@@ -41,7 +41,8 @@ def owasp(){
    sh '''
    wget https://github.com/jeremylong/DependencyCheck/releases/download/v12.1.0/dependency-check-12.1.0-release.zip
    sudo apt install unzip
-   unzip dependency-check-12.1.0-release.zip
+   unzip -o dependency-check-12.1.0-release.zip
+
    
    '''
 }
