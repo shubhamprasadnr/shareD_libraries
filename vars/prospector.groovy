@@ -7,7 +7,7 @@ def call() {
         ${VENV_DIR}/bin/pip install pipreqs
         ${VENV_DIR}/bin/pip install --upgrade setuptools
        
-       ${VENV_DIR}venv/bin/pip install pylint-flask-extensions flask-pylint
+       ${VENV_DIR}/bin/pip install pylint-flask-extensions flask-pylint
         ${VENV_DIR}/bin/pip install prospector
         ${VENV_DIR}/bin/prospector --format html --output prospector.html
 
