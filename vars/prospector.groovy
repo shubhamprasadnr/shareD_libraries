@@ -4,9 +4,9 @@ def call() {
 
     sh """
         set -e  # Stop the script on errors
-        pip install pipreqs prospector
+       ${VENV_DIR} pip install pipreqs prospector
         
         # Run Prospector for static analysis
-        prospector --output-format full --profile strict || true
+       ${VENV_DIR} prospector --output-format full --profile strict || true
     """
 }
