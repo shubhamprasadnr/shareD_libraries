@@ -12,12 +12,8 @@ def call() {
         
         # Activate the virtual environment
         . ${VENV_DIR}/bin/activate
-        
-        # Upgrade pip and install dependencies
-        pip install --upgrade pip
         pip install pipreqs prospector
         
-      
         # Run Prospector for static analysis
         prospector --output-format full --profile strict || true
     """
