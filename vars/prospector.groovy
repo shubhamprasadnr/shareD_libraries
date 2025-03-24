@@ -5,7 +5,9 @@ def call() {
         set -e
         ${VENV_DIR}/bin/pip install --upgrade pip setuptools wheel
         ${VENV_DIR}/bin/pip install pipreqs
-       
+       ${VENV_DIR}/bin/pip install --upgrade setuptools
+       ${VENV_DIR}/bin/pip install git+https://github.com/jschaf/pylint-flask.git
+
         ${VENV_DIR}/bin/pip install prospector 
         ${VENV_DIR}/bin/prospector --format html --output prospector.html
 
