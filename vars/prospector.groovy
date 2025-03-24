@@ -17,9 +17,7 @@ def call() {
         pip install --upgrade pip
         pip install pipreqs prospector
         
-        # Generate requirements file
-        pipreqs . --force
-
+      
         # Run Prospector for static analysis
         prospector --output-format full --profile strict || true
     """
