@@ -12,6 +12,7 @@ def call() {
         
         # Activate the virtual environment
         . ${VENV_DIR}/bin/activate
+        pip install --no-build-isolation pylint-flask
         pip install pipreqs prospector
         
         # Run Prospector for static analysis
