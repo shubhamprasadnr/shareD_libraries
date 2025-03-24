@@ -4,15 +4,6 @@ def call() {
 
     sh """
         set -e  # Stop the script on errors
-        
-        # Create a virtual environment if not exists
-        if [ ! -d "${VENV_DIR}" ]; then
-            ${PYTHON} -m venv ${VENV_DIR}
-        fi
-        
-        # Activate the virtual environment
-        . ${VENV_DIR}/bin/activate
-        pip install --no-build-isolation pylint-flask
         pip install pipreqs prospector
         
         # Run Prospector for static analysis
