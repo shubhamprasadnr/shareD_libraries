@@ -1,12 +1,17 @@
-def call() {
-    def PYTHON = "/usr/bin/python3"
+def prospector() {
     def VENV_DIR = "venv"
 
     sh """
-        set -e  # Stop the script on errors
-       ${VENV_DIR} pip install pipreqs prospector
-        
+        set -e  # Stop on errors
+
+        # Activate the virtual environment
+        . ${VENV_DIR}/bin/activate
+
+        # Ensure dependencies are installed
+        pip install --upgrade pip
+        pip install pipreqs prospector
+
         # Run Prospector for static analysis
-       ${VENV_DIR} prospector --output-format full --profile strict || true
+        prospector --output-format full --profile strict || true
     """
 }
