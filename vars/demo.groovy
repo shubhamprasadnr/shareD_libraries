@@ -1,9 +1,7 @@
 def call(name) {
    echo "${name}"
 }
-def cleanWorkspace() {
-   sh " cleanWs() "
-}
+
 def gitCheckout(String branch, String repoUrl ) {
     script {
         echo "Checking out branch: ${branch} from repository: ${repoUrl}"
