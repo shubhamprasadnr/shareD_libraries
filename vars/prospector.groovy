@@ -1,4 +1,4 @@
-def prospector() {
+def call() {
     def VENV_DIR = "venv"
 
     sh """
